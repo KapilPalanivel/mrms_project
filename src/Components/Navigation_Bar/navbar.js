@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -22,7 +23,9 @@ const Navbar = () => {
         {
          isLoggedInd?null: 
           <Link to='/login'>
-            <Beforeloginbtns/>
+             <div className='beforeloginbtn'>
+                <Button sx={{color:'white'}}>Login</Button>
+            </div>
           </Link>
         }
       </Toolbar>

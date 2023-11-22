@@ -1,5 +1,4 @@
 import React,{useEffect,useState} from 'react';
-import {Link} from 'react-router-dom'
 import { Avatar, Box, Button, Container, Grid, Paper, TextField, Typography } from '@mui/material';
 import axios from 'axios';
  const Login = (props) => {
@@ -7,21 +6,20 @@ import axios from 'axios';
   const [usrname,setUsrname] = useState('');
   const [pass,setPassword] = useState('');
   const [items,setItems] =useState([]);
-  const [error,setError] =useState(true);
-  useEffect(()=>{axios.get(url).then((Response)=>{setItems(Response.data);setError(false);})
+  const [error,setError] =useState(false);
+  useEffect(()=>{axios.get(url).then((Response)=>{setItems(Response.data);setError(true);})
   .catch((error)=>{console.error(error);})},[]);
   const HandleLogin= () =>
   {
     {
       items.map((item) => {
         if (usrname == item.username && pass == item.password) {
-          handleLogin(true); // use the prop here
-          setError(false);
-          console.log("hello");
+          // props.handleLogin(true);
+          setError(true);
         }
         else 
         {
-          setError(false);
+          setError(true);
         }
       });
     }
@@ -50,10 +48,6 @@ import axios from 'axios';
     backgroundColor: '#0e7081',
     color: '#f7efef',
   };
-  if(error)
-  {
-    return <h1>Error!</h1>
-  }
   return (
     // Use the Container component to center your content horizontally
     <Container maxWidth="sm">
@@ -93,8 +87,7 @@ import axios from 'axios';
               required
             />
             <br/>
-            {error?<Typography variant='h6'>Inavalid Username or Password</Typography>:null
-            }
+            {error?<Typography color={'red'} variant='6'>*Inavalid Username or Password</Typography>:null}
             <br/>
               <Button
                 type="submit"
