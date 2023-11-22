@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "username": "kapil1115",
+      "number": 7708831167,
+      "password": "12345678"
+    },
+    {
+      "username": "kalai1220",
+      "number": 6380279113,
+      "password": "87654321"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
