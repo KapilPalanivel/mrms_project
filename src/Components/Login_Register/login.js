@@ -1,29 +1,37 @@
-import React,{useEffect,useState} from 'react';
+import Navbar from '../Navigation_Bar/navbar';
+import React,{useEffect,useState,createContext} from 'react';
 import { Avatar, Box, Button, Container, Grid, Paper, TextField, Typography } from '@mui/material';
 import axios from 'axios';
- const Login = (props) => {
-    const url=' http://localhost:3002/posts';
-  const [usrname,setUsrname] = useState('');
-  const [pass,setPassword] = useState('');
-  const [items,setItems] =useState([]);
-  const [error,setError] =useState(false);
-  useEffect(()=>{axios.get(url).then((Response)=>{setItems(Response.data);setError(true);})
-  .catch((error)=>{console.error(error);})},[]);
-  const HandleLogin= () =>
-  {
-    {
-      items.map((item) => {
-        if (usrname == item.username && pass == item.password) {
-          // props.handleLogin(true);
+export const loginstate= React.createContext()
+const Login = (props) => {
+
+    const url = 'http://localhost:3002/posts';
+    const [currentloginstate, setCurrentloginstate] = useState(false);
+    const [usrname, setUsrname] = useState('');
+    const [pass, setPassword] = useState('');
+    const [items, setItems] = useState([]);
+    const [error, setError] = useState(false);
+  
+    useEffect(() => {
+      axios.get(url).then((Response) => {
+        setItems(Response.data);
+        setError(true);
+      }).catch((error) => {
+        console.error(error);
+      });
+    }, []);
+  
+    const HandleLogin = () => {
+      items.forEach((item) => {
+        if (usrname === item.username && pass === item.password) {
+          setCurrentloginstate(true);
           setError(true);
-        }
-        else 
-        {
-          setError(true);
+        } else {
+          setCurrentloginstate(false);
         }
       });
     }
-  }
+  
   const paperStyle = {
     padding: 4,
     height: '60vh',
@@ -49,8 +57,8 @@ import axios from 'axios';
     color: '#f7efef',
   };
   return (
-    // Use the Container component to center your content horizontally
-    <Container maxWidth="sm">
+  <React.Fragment>
+  <Container maxWidth="sm">
       <Grid container justifyContent="center" alignItems="center" style={{ height: '100vh'}}>
         <Paper elevation={3} style={paperStyle}>
           <Grid align="center">
@@ -101,6 +109,10 @@ import axios from 'axios';
         </Paper>
       </Grid>
     </Container>
+    <loginstate.Provider value={currentloginstate}>
+                        <Navbar/>
+    </loginstate.Provider>
+    </React.Fragment>
   );
 };
 

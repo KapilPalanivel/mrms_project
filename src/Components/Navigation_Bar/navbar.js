@@ -3,16 +3,19 @@ import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { useContext } from 'react';
+import loginstate from '../Login_Register/login';
 import Afterloginbtns from './afterloginbtns';
 import Beforeloginbtns from './beforelogin';
+import Login from '../Login_Register/login';
 import Menubar from './menubar';
 import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './navbar.css';
+
 const Navbar = () => {
-  const [isLoggedInd,setIsLoggedIn] = useState(false);
-  const handleLogin = (value) => {
-    setIsLoggedIn(value);
-  };
+  const mycon=useContext(loginstate);
+  const isLoggedInd=mycon;
   return (
     <AppBar position="static" style={{ backgroundColor: '#164778' }}>
       <Toolbar>
@@ -21,10 +24,10 @@ const Navbar = () => {
           Medical Records Management System
         </Typography>
         {
-         isLoggedInd?null: 
+         isLoggedInd?<Afterloginbtns/>:
           <Link to='/login'>
-             <div className='beforeloginbtn'>
-                <Button sx={{color:'white'}}>Login</Button>
+            <div className='beforeloginbtn'>
+              <Button sx={{ color: 'white' }}>Login</Button>
             </div>
           </Link>
         }
