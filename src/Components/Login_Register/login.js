@@ -14,15 +14,18 @@ const Login = (props) => {
   
     useEffect(() => {
       axios.get(url).then((Response) => {
+        console.log('Response data:', Response.data);
         setItems(Response.data);
         setError(true);
       }).catch((error) => {
-        console.error(error);
+        console.error('Error fetching data:', error);
       });
     }, []);
-  
+    
     const HandleLogin = () => {
-      items.forEach((item) => {
+      console.log('items:', items);
+      items.map((item) => {
+        console.log('item:', item);
         if (usrname === item.username && pass === item.password) {
           setCurrentloginstate(true);
           setError(true);
