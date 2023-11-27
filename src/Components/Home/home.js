@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
-import ShieldIcon from '@mui/icons-material/Shield';
-import { Chip, Container, Divider, Typography, Grid } from "@mui/material";
+import { Divider, Typography, Grid } from "@mui/material";
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import BookIcon from '@mui/icons-material/Book';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';

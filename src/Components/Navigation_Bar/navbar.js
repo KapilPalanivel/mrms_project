@@ -1,81 +1,48 @@
-// import React from 'react';
-// import Button from '@mui/material/Button';
-// import AppBar from '@mui/material/AppBar';
-// import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
-// import { Routes, Route, Link } from 'react-router-dom';
-// import Login from '../Login_Register/login';
-// import Menubar from './menubar';
-// import './navbar.css';
-
-// const Navbar = (props) => {
-//   const { isLoggedInd, onLogin } = props;
-
-//   return (
-//     <div>
-//       <AppBar position="static" style={{ backgroundColor: '#164778' }}>
-//         <Toolbar>
-//           <Menubar />
-//           <Typography fontFamily={'Goudy Old Style'} className="navbar_heading" variant="h6" color="inherit" style={{ flexGrow: 1 }}>
-//             Medical Records Management System
-//           </Typography>
-//           {isLoggedInd ? null : (
-//             <div className="beforeloginbtn">
-//               <Button component={Link} to="/login" sx={{ color: 'white' }}>
-//                 Login
-//               </Button>
-//             </div>
-//           )}
-//         </Toolbar>
-//       </AppBar>
-//       <Routes>
-//         <Route path="/login" element={<Login onLogin={onLogin} />} />
-//       </Routes>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
-//new
-
-// Navbar.js
 import React from 'react';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Routes, Route, Link } from 'react-router-dom';
-import Login from '../Login_Register/login';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import { useAuth } from '../../AuthContext'; // Correct the path
 import Menubar from './menubar';
 import './navbar.css';
 import Afterloginbtns from './afterloginbtns';
-import Avatar from './Avatar';
-const Navbar = (props) => {
-  const { isLoggedInd, onLogin } = props;
+import Login from '../Login_Register/login';
+
+const Navbar = () => {
+  const { isAuthenticated, login, logout } = useAuth(); // Use useAuth here
+
+  const handleLogout = () => {
+    logout();
+  };
 
   return (
     <div>
       <AppBar position="static" style={{ backgroundColor: '#164778' }}>
         <Toolbar>
-        {isLoggedInd ?
-          <Menubar />:null
-        }
-          <Typography fontFamily={'Goudy Old Style'} className="navbar_heading" variant="h6" color="inherit" style={{ flexGrow: 1,margin:'20px',textAlign: 'center' }}>
+          {isAuthenticated ? <Menubar /> : null}
+          <Typography fontFamily={'Goudy Old Style'} className="navbar_heading" variant="h6" color="inherit" style={{ flexGrow: 1, margin: '20px', textAlign: 'center' }}>
             Medical Records Management System
           </Typography>
-          {isLoggedInd ?<> <Afterloginbtns/></> : (
-            // <div className="beforeloginbtn">
-            //   <Button component={Link} to="/login" sx={{ color: 'white' }}>
-            //     Login
-            //   </Button>
-            // </div>
-            null
+          {isAuthenticated ? (
+            <Afterloginbtns onLogout={handleLogout} />
+          ) : (
+           null
           )}
         </Toolbar>
       </AppBar>
       <Routes>
-        <Route path="/login" element={<Login onLogin={onLogin} />} />
+        <Route
+          path="/login"
+          element={
+            isAuthenticated ? (
+              <Navigate to="/home" />
+            ) : (
+              <Login onLogin={login} />
+            )
+          }
+        />
       </Routes>
     </div>
   );
