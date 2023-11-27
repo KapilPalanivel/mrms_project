@@ -3,12 +3,18 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useNavigate } from 'react-router-dom';
 export default function Menubar() {
+    const navigate=useNavigate();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
+        setAnchorEl(null);
+    };
+    const handleDept = () => {
+        navigate('/patientsearch');
         setAnchorEl(null);
     };
     return(
@@ -29,8 +35,8 @@ export default function Menubar() {
           MenuListProps={{onMouseLeave: handleClose,}}
           onMouseLeave={handleClose}
         >
-          <MenuItem onClick={handleClose}>Search Patients</MenuItem>
-          <MenuItem onClick={handleClose}>Add New Patient</MenuItem>
+          <MenuItem onClick={handleDept}>Search Patients</MenuItem>
+          <MenuItem onClick={handleClose}>Department</MenuItem>
           <MenuItem onClick={handleClose}>Edit Patient Information</MenuItem>
         </Menu>
         </div>

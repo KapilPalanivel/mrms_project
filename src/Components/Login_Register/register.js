@@ -1,8 +1,7 @@
 import React from 'react';
-import { Avatar, Box, Button, Container, Grid, Paper, TextField, Typography } from '@mui/material';
+import { Avatar, Button, Container, Grid, Paper, TextField, Typography } from '@mui/material';
 
-const Register = (props) => {
-  // Use the Box component to apply custom styles to any element
+const Register = () => {
   const paperStyle = {
     padding: 4,
     height: '75vh',

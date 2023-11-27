@@ -115,20 +115,19 @@
 import React, { useState, useEffect } from 'react';
 import { Avatar, Button, Container, Grid, Paper, TextField, Typography } from '@mui/material';
 import axios from 'axios';
-import { Link, Routes,Route } from 'react-router-dom';
+import {  Routes,Route,useNavigate } from 'react-router-dom';
 import HomePage from '../Home/home';
 import './login.css';
 const Login = ({ onLogin }) => {
-  const url = 'http://localhost:3002/posts';
+  const url = 'http://localhost:3002/employee';
   const [formData, setFormData] = useState({
     usrname: '',
     pass: '',
   });
-  const [currentloginstate, setCurrentloginstate] = useState(false);
   const [items, setItems] = useState([]);
   const [error, setError] = useState(false);
   const [exist, setExist] = useState(false);
-
+  const navigate=useNavigate();
   useEffect(() => {
     axios.get(url).then((response) => {
       setItems(response.data);
@@ -139,15 +138,15 @@ const Login = ({ onLogin }) => {
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
       if (formData.usrname === item.username && formData.pass === item.password) {
-        setCurrentloginstate(true);
         setError(false);
         setExist(true);
         onLogin(true);
+        navigate('/home');
         return;
       } else {
         setError(true);
         setExist(false);
-        setCurrentloginstate(true);
+        // setCurrentloginstate(true);
       }
     }
   };
@@ -167,9 +166,7 @@ const Login = ({ onLogin }) => {
     <Container  maxWidth="sm">
       <Grid container justifyContent="center" alignItems="center" style={{ height: '100vh' }}>
         {exist ? (
-            <Link to="/home">
-              <Typography variant="h4">Logged in!</Typography>
-            </Link>
+            null
         ) : (
           <Paper elevation={3} style={{ padding: 4, height: '60vh', width: '40vh', margin: '20px auto' }}>
             <Grid align="center">

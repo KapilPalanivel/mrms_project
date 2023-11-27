@@ -50,6 +50,7 @@ import Login from '../Login_Register/login';
 import Menubar from './menubar';
 import './navbar.css';
 import Afterloginbtns from './afterloginbtns';
+import Avatar from './Avatar';
 const Navbar = (props) => {
   const { isLoggedInd, onLogin } = props;
 
@@ -63,12 +64,13 @@ const Navbar = (props) => {
           <Typography fontFamily={'Goudy Old Style'} className="navbar_heading" variant="h6" color="inherit" style={{ flexGrow: 1,margin:'20px',textAlign: 'center' }}>
             Medical Records Management System
           </Typography>
-          {isLoggedInd ? <Afterloginbtns/> : (
-            <div className="beforeloginbtn">
-              <Button component={Link} to="/login" sx={{ color: 'white' }}>
-                Login
-              </Button>
-            </div>
+          {isLoggedInd ?<> <Afterloginbtns/></> : (
+            // <div className="beforeloginbtn">
+            //   <Button component={Link} to="/login" sx={{ color: 'white' }}>
+            //     Login
+            //   </Button>
+            // </div>
+            null
           )}
         </Toolbar>
       </AppBar>

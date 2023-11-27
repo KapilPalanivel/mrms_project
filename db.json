@@ -1,14 +1,75 @@
 {
-  "posts": [
+  "patient": [
     {
-      "username": "kapil1115",
-      "number": 7708831167,
-      "password": "2005"
+      "name": "Kalayarasan",
+      "username": "Kalai1220",
+      "number": "6380279113",
+      "email":"kalai.juuu@gmail.com",
+      "password": "2005",
+      "dept":"oncology",
+      "dob":"12.05.2005",
+      "sex":"Male"
     },
     {
-      "username": "kalai1220",
-      "number": 6380279113,
-      "password": "2005"
+      "username": "karthi007",
+      "name": "Karthikeyan",
+      "number": "8778032386",
+      "email":"karthi.kay@gmail.com",
+      "password": "2005",
+      "dept":"nuerology",
+      "dob":"5.01.2005",
+      "sex":"Male"
+    },
+    {
+      "username": "lingesh1104",
+      "name": "Lingesh",
+      "number": "9025884131",
+      "email":"lingesh@gmail.com",
+      "password": "2005",
+      "dept":"dermatology",
+      "dob":"1.10.2004",
+      "sex":"Male"
+    },
+    {
+      "username": "johnson224",
+      "name": "john",
+      "number": "6369873416",
+      "email":"johnson@gmail.com",
+      "password": "2005",
+      "dept":"orthology",
+      "dob":"2.02.2004",
+      "sex":"Male"
+    },
+    {
+      "username": "karnan6103",
+      "name": "Karnan",
+      "number": "9698705250",
+      "email":"karnan.r@gmail.com",
+      "password": "2005",
+      "dept":"orthology",
+      "dob":"6.10.2003",
+      "sex":"Male"
+    }
+  ],
+  "employee":[
+    {
+      "username": "kapil1115",
+      "name": "Kapil Palanivel",
+      "number": "7708831167",
+      "email":"kapil.palanivel1@gmail.com",
+      "password": "2005",
+      "dept":"Cardiology",
+      "dob":"11.01.2005"
+    },
+    {
+      "username": "krithi1115",
+      "name": "Krithiya",
+      "number": "8248036601",
+      "email":"krithi.k@gmail.com",
+      "password": "2005",
+      "dept":"Anesthetics",
+      "dob":"11.01.2005",
+      "sex":"Female"
     }
   ],
   "comments": [

@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
-import PatientService from './PatientService';
+import axios from 'axios';
 
 const PatientList = () => {
   const [patients, setPatients] = useState([]);
+  const url = 'http://localhost:3002/patient';
 
   useEffect(() => {
-    // Simulating fetching patient data
-    const fetchData = async () => {
-      try {
-        const data = await PatientService.getPatients();
-        setPatients(data);
-      } catch (error) {
-        console.error('Error fetching patients:', error);
-      }
-    };
-
-    fetchData();
+    axios.get(url).then((response) => {
+      setPatients(response.data);
+    });
   }, []);
 
   return (
@@ -29,17 +22,21 @@ const PatientList = () => {
           <TableHead>
             <TableRow>
               <TableCell>ID</TableCell>
+              <TableCell>Username</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
+              <TableCell>Department Consulting</TableCell>
               {/* Add more table headers based on your patient data */}
             </TableRow>
           </TableHead>
           <TableBody>
-            {patients.map((patient) => (
-              <TableRow key={patient.id}>
-                <TableCell>{patient.id}</TableCell>
+            {patients.map((patient, index) => (
+              <TableRow key={index + 1}>
+                <TableCell>{index + 1}</TableCell>
                 <TableCell>{patient.name}</TableCell>
+                <TableCell>{patient.number}</TableCell>
                 <TableCell>{patient.email}</TableCell>
+                <TableCell>{patient.dept}</TableCell>
                 {/* Add more table cells based on your patient data */}
               </TableRow>
             ))}
