@@ -1,7 +1,16 @@
 .App {
   text-align: center;
+  
 }
-
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('./kmch.jpg'); /* Adjust the path based on your project structure */
+  background-size: cover;
+  background-repeat:no-repeat;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
