@@ -18,12 +18,18 @@ export default function Afterloginbtns()
       const handleProfile = () =>{
         navigate('/profile')
       } 
+      const handleRecords= () =>{
+        navigate('/records');
+      }
+      const  handleAbout= () =>{
+        navigate('/about');
+      }
     return(
         <ThemeProvider theme={theme}>
             <div className='afterloginbtn'>
-                <Button color="inherit">Records</Button>
+                <Button color="inherit" onClick={handleAbout}>About Us</Button>
                 <Button color="inherit" onClick={handleAppointment}>Appointments</Button>
-                <Button color="inherit">Billing</Button>
+                <Button color="inherit" onClick={handleRecords}>Records</Button>
                 <Button color="inherit" onClick={handleProfile}>Profile</Button>
             </div>
         </ThemeProvider>

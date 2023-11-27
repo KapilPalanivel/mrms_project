@@ -158,9 +158,6 @@ const Login = ({ onLogin }) => {
       [name]: value,
     }));
   };
-  if (exist) {
-     // Assuming '/' is your home page route
-  }
   return (
     <div className='loginbody'>
     <Container  maxWidth="sm">

@@ -7,3 +7,8 @@
   height: 100vh;
   font-family: 'Arial', sans-serif;
 }
+.homeimg{
+  background-image: url('./kmch.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

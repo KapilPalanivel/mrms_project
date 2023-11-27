@@ -11,7 +11,8 @@ import PatientSearch from './Components/Services/Patientsearch';
 import Appointments from './Components/Services/Appointments';
 import Profile from './Components/Services/Profile';
 import Footer from './Components/Services/Footer';
-
+import Records from './Components/Services/Records';
+import AboutUs from './Components/Services/About';
 function App() {
   const [isLoggedInd, setIsLoggedInd] = useState(false);
 
@@ -31,9 +32,11 @@ function App() {
           <Route path="/patientsearch" element={<PatientSearch />} />
           <Route path="/appointment" element={<Appointments />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/records" element={<Records />} />
+          <Route path="/about" element={<AboutUs />} />
         </Routes>
       </div>
-      <Footer />
+      <Footer className="footer"></Footer>
     </div>
   );
 }

@@ -28,7 +28,8 @@ const PatientForm = () => {
   
 
   return (
-    <Container maxWidth="sm" style={{ marginTop: '20px' }}>
+    <div style={{height:'100vh'}}>
+      <Container maxWidth="sm" style={{ marginTop: '20px' }}>
       <Paper elevation={3} style={{ padding: '20px', textAlign: 'center' }}>
         <Typography variant="h4">Patient Information Form</Typography>
 
@@ -135,6 +136,7 @@ const PatientForm = () => {
         </Button>
       </Paper>
     </Container>
+    </div>
   );
 };
 

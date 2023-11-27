@@ -6,9 +6,12 @@
   background-image: url('./kmch.jpg');
   background-position: top;
   background-size: cover;
-  height: 100vh;
+  background-repeat: no-repeat;
+  height: 150vh;
 }
-
+.footer{
+  margin-top: 1000vh;
+}
 /* body {
   margin: 0;
   padding: 0;

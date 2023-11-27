@@ -23,7 +23,7 @@ const Appointments = () => {
   };
 
   return (
-    <div>
+    <div style={{height:'100vh'}}>
       <Typography variant="h4" sx={{ marginBottom: '10px' }}>
         {todayFormatted}
       </Typography>

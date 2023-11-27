@@ -13,7 +13,7 @@ const PatientList = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{height:'100vh'}}>
       <Typography variant="h4" gutterBottom>
         Patient List
       </Typography>

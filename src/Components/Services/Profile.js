@@ -16,13 +16,14 @@ export default function () {
         // width: { lg: "80%", md: "70%", sm: "auto" }
     }
     return (
+        <div style={{height:'100vh'}}>
         <Box display={"flex"} flexDirection={"column"}>
             <Box height={'20vh'} display={"flex"} flexDirection={"column"}justifyContent={"center"} alignItems={"center"} sx={{mb:'50px'  , mt:'60px'}}>
                 <AccountCircle sx={{ fontSize: "90px" }} />
                 <Typography fontStyle={"italic"} fontSize={50}> Welcome Back !</Typography>
             </Box>
             <Grid container spacing={5} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} gap={8} sx={{}}>
-            <Paper sx={{width:'800px',borderRadius:'10px'}}>
+            <Paper sx={{width:'800px',borderRadius:'10px',height:'600px'}}>
                 <Grid item display={"flex"} flexDirection={"row "} gap={20}>
                     <Grid md={4} sm={12} style={gridcomp} flexDirection={"column"} gap={4}>
 
@@ -34,7 +35,7 @@ export default function () {
                         <Typography>Phone Number</Typography>
                         <Typography>DOB</Typography>
                         <Typography>Id</Typography>
-                        <Button variant="filled" sx={{color:"#1976d2"}}>Update</Button>
+                        <Button variant="filled" sx={{color:"#1976d2",marginLeft:'350px'}}>Update</Button>
                     </Grid>
 
                     <Grid item md={4} sm={12} style={gridcomp} flexDirection={"column"} gap={4} sx={{ mt: { lg: '5px'  , md:'40px' , sm:'40px' , xs:'20px'} }}>
@@ -50,8 +51,8 @@ export default function () {
                     </Grid>
 
                 </Grid>
-            </Paper>
                 <Grid item display={"flex"} flexDirection={"row "} gap={20}>
+                    
                     <Grid md={4} sm={12} style={gridcomp} flexDirection={"column"} gap={4} mb   ={10}>
 
                         {/* <Divider sx={{ border: '1px solid #1f1f1f' }} /> */}
@@ -61,7 +62,7 @@ export default function () {
                         <Typography>Receive updates on Mail</Typography>
                         {/* <Typography>Phone Number</Typography>
                         <Typography>DOB</Typography>
-                        <Typography>Id</Typography> */}
+                    <Typography>Id</Typography> */}
                     </Grid>
 
                     <Grid item md={4} sm={12} style={gridcomp} flexDirection={"column"} gap={4} mb={8} sx={{ mt: { lg: '80px'  , md:'100px' , sm:'100px' , xs:'90px'} } }>
@@ -69,22 +70,19 @@ export default function () {
                         {/* <Box sx={{gap:1, display:'flex'}}>
                             <input type="radio" id="option1" name="option" value="1" />
                             <label for="option1">Dark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                <input type="radio" id="option2" name="option" value="2" checked/>
-                                <label for="option2">Light</label>
+                            <input type="radio" id="option2" name="option" value="2" checked/>
+                            <label for="option2">Light</label>
                         </Box> */}
 
                         <FormGroup>
-  <FormControlLabel control={<Switch defaultChecked />} label="" />
-  {/* <FormControlLabel required control={<Switch />} label="Required" />
-  <FormControlLabel disabled control={<Switch />} label="Disabled" /> */}
-</FormGroup>
-
-                        {/* <Typography>9850051585</Typography>
-                        <Typography>06 / 10 / 2003</Typography>
-                        <Typography>IT 078</Typography> */}
+                        <FormControlLabel control={<Switch defaultChecked />} label="" />
+                       
+                        </FormGroup>
                     </Grid>
                 </Grid>
+                        </Paper>
             </Grid>
         </Box>
+        </div>
     )
 }

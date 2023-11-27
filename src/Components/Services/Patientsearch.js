@@ -38,7 +38,7 @@ const PatientSearch = () => {
   
 
   return (
-    <Container maxWidth="sm" style={{ marginTop: '20px' }}>
+    <Container maxWidth="sm" style={{ marginTop: '20px',height:'100vh' }}>
       <Paper elevation={3} style={{ padding: '20px', textAlign: 'center' }}>
         <Typography variant="h4">Patient Search</Typography>
 
