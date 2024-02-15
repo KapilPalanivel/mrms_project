@@ -36,7 +36,6 @@ const PatientSearch = () => {
     navigate('/patientform');
   }; 
   
-
   return (
     <Container maxWidth="sm" style={{ marginTop: '20px',height:'100vh' }}>
       <Paper elevation={3} style={{ padding: '20px', textAlign: 'center' }}>
@@ -65,7 +64,6 @@ const PatientSearch = () => {
           </Typography>
         ) : (
           <>
-            {/* Display patient list */}
             <List style={{ marginTop: '20px' }}>
               {patients.map(patient => (
                 <ListItem key={patient.id}>

@@ -23,10 +23,6 @@ const PatientForm = () => {
     }));
   };
 
-  // const handleSubmit = () => {
-    
-  
-
   return (
     <div style={{height:'100vh'}}>
       <Container maxWidth="sm" style={{ marginTop: '20px' }}>

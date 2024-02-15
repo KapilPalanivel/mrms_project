@@ -23,7 +23,7 @@ const Navbar = () => {
         <Toolbar>
           {isAuthenticated ? <Menubar /> : null}
           <Typography fontFamily={'Goudy Old Style'} className="navbar_heading" variant="h6" color="inherit" style={{ flexGrow: 1, margin: '20px', textAlign: 'center' }}>
-            Medical Records Management System
+            <Link style={{color: 'white',fontFamily:'cursive'}}>Medical Records Management System</Link> 
           </Typography>
           {isAuthenticated ? (
             <Afterloginbtns onLogout={handleLogout} />

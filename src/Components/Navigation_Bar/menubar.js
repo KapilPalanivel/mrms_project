@@ -13,7 +13,11 @@ export default function Menubar() {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const handleDept = () => {
+    const handleDepartment = () => {
+        navigate('/department');
+        setAnchorEl(null);
+    };
+    const handlePatientSearch = () => {
         navigate('/patientsearch');
         setAnchorEl(null);
     };
@@ -35,8 +39,8 @@ export default function Menubar() {
           MenuListProps={{onMouseLeave: handleClose,}}
           onMouseLeave={handleClose}
         >
-          <MenuItem onClick={handleDept}>Search Patients</MenuItem>
-          <MenuItem onClick={handleClose}>Department</MenuItem>
+          <MenuItem onClick={handlePatientSearch}>Search Patients</MenuItem>
+          <MenuItem onClick={handleDepartment}>Department</MenuItem>
           <MenuItem onClick={handleClose}>Edit Patient Information</MenuItem>
         </Menu>
         </div>

@@ -31,7 +31,7 @@ const Login = () => {
       if (formData.usrname === item.username && formData.pass === item.password) {
         setError(false);
         setExist(true);
-        login(true);  // Call the login method from the useAuth hook
+        login(true);
         navigate('/home');
         return;
       } else {
