@@ -7,9 +7,8 @@
   background: #eee;
 }
 .loginbody{
-  margin: 0;
+  margin-bottom: 460px;
   padding: 0;
-  background-image: url('./kmch.jpg'); /* Adjust the path based on your project structure */
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;

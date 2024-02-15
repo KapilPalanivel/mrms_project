@@ -1,75 +1,100 @@
 {
   "patient": [
     {
+      "id": 1,
       "name": "Kalaiyarasan",
       "username": "Kalai1220",
       "number": "6380279113",
-      "email":"kalai.juuu@gmail.com",
+      "email": "kalaiyarasan1220@gmail.com",
       "password": "2005",
-      "dept":"oncology",
-      "dob":"12.05.2005",
-      "sex":"Male"
+      "dept": "oncology",
+      "dob": "12.05.2005",
+      "sex": "Male"
     },
     {
+      "id": 2,
       "username": "karthi007",
       "name": "Karthikeyan",
       "number": "8778032386",
-      "email":"karthi.kay@gmail.com",
+      "email": "karthi.kay@gmail.com",
       "password": "2005",
-      "dept":"nuerology",
-      "dob":"5.01.2005",
-      "sex":"Male"
+      "dept": "nuerology",
+      "dob": "5.01.2005",
+      "sex": "Male"
     },
     {
+      "id": 3,
       "username": "lingesh1104",
       "name": "Lingesh",
       "number": "9025884131",
-      "email":"lingesh@gmail.com",
+      "email": "lingesh@gmail.com",
       "password": "2005",
-      "dept":"dermatology",
-      "dob":"1.10.2004",
-      "sex":"Male"
+      "dept": "dermatology",
+      "dob": "1.10.2004",
+      "sex": "Male"
     },
     {
+      "id": 4,
       "username": "johnson224",
       "name": "john",
       "number": "6369873416",
-      "email":"johnson@gmail.com",
+      "email": "johnson@gmail.com",
       "password": "2005",
-      "dept":"orthology",
-      "dob":"2.02.2004",
-      "sex":"Male"
+      "dept": "orthology",
+      "dob": "2.02.2004",
+      "sex": "Male"
     },
     {
+      "id": 5,
       "username": "karnan6103",
       "name": "Karnan",
       "number": "9698705250",
-      "email":"karnan.r@gmail.com",
+      "email": "karnan.r@gmail.com",
       "password": "2005",
-      "dept":"orthology",
-      "dob":"6.10.2003",
-      "sex":"Male"
+      "dept": "orthology",
+      "dob": "6.10.2003",
+      "sex": "Male"
+    },
+    {
+      "username": "",
+      "name": "",
+      "number": "",
+      "email": "",
+      "password": "",
+      "dept": "",
+      "dob": "",
+      "id": 6
+    },
+    {
+      "username": "",
+      "name": "",
+      "number": "",
+      "email": "",
+      "password": "",
+      "dept": "",
+      "dob": "",
+      "id": 7
     }
   ],
-  "employee":[
+  "employee": [
     {
       "username": "kapil1115",
       "name": "Kapil Palanivel",
       "number": "7708831167",
-      "email":"kapil.palanivel1@gmail.com",
+      "email": "kapil.palanivel1@gmail.com",
       "password": "2005",
-      "dept":"Cardiology",
-      "dob":"11.01.2005"
+      "dept": "Cardiology",
+      "dob": "11.01.2005"
     },
     {
       "username": "krithi1115",
       "name": "Krithiya",
       "number": "8248036601",
-      "email":"krithi.k@gmail.com",
+      "email": "krithi.k@gmail.com",
       "password": "2005",
-      "dept":"Anesthetics",
-      "dob":"11.01.2005",
-      "sex":"Female"
+      "dept": "Anesthetics",
+      "dob": "11.01.2005",
+      "sex": "Female"
     }
   ],
   "comments": [

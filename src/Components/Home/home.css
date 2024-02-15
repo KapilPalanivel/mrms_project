@@ -1,14 +1,49 @@
-.homediv{
-    margin: 0;
+/* .homediv {
+  margin: 0;
   padding: 0;
-  background-image: url('./kmch.jpg'); /* Adjust the path based on your project structure */
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: transparent; /* Set background color to transparent 
   height: 100vh;
   font-family: 'Arial', sans-serif;
-}
-.homeimg{
+  position: fixed; /* Set the background as fixed 
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure the background is behind other content 
+} */
+
+.homeimg {
   background-image: url('./kmch.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.cardcomp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 12px;
+  flex-direction: row; /* Changed from 'column' to 'row' */
+}
+
+.grid2comp {
+  padding: 5px;
+  gap: 3px;
+  height: 35vh;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridcomp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 12px;
+  flex-direction: column; /* Changed from 'column' to 'row' */
 }

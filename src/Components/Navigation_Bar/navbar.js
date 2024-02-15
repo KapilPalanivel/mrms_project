@@ -9,7 +9,7 @@ import './navbar.css';
 import Afterloginbtns from './afterloginbtns';
 import Login from '../Login_Register/login';
 
-const Navbar = () => {
+const Navbar = ({ isLoggedInd }) => {
   const { isAuthenticated, login, logout } = useAuth(); // Use useAuth here
 
   const handleLogout = () => {
@@ -17,15 +17,20 @@ const Navbar = () => {
   };
 
   return (
-    <div>
+    <div style={{height:'200px'}}>
       <AppBar position="static" style={{ backgroundColor: '#164778' }}>
-        <Toolbar>
+        <Toolbar style={{ justifyContent: 'space-between' }}>
           {isAuthenticated ? <Menubar /> : null}
-          <Typography fontFamily={'Goudy Old Style'} className="navbar_heading" variant="h6" color="inherit" style={{ flexGrow: 1, margin: '20px', textAlign: 'center' }}>
-          <Link to="/home" style={{ textDecoration: 'none', color: 'white', fontFamily: 'cursive' }}>Medical Records Management System</Link>
+          <Typography fontFamily={'Goudy Old Style'} className="navbar_heading" variant="h6" color="inherit" style={{ margin: '20px', textAlign: 'center' }}>
+            {isAuthenticated ? (
+              <Link to="/home" style={{ textDecoration: 'none', color: 'white', fontFamily: 'cursive' }}>Medical Records Management System</Link>
+            ) : (
+              <span style={{ textDecoration: 'none', color: 'white', fontFamily: 'cursive' }}>Medical Records Management System</span>
+            )}
           </Typography>
           {isAuthenticated ? (
-            <Afterloginbtns onLogout={handleLogout} />):(null)}
+            <Afterloginbtns onLogout={handleLogout} />
+          ) : null}
         </Toolbar>
       </AppBar>
       <Routes>

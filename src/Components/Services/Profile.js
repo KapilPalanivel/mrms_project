@@ -28,13 +28,13 @@ export default function ProfilePage() {
     };
 
     return (
-        <div style={{ height: '100vh', backgroundImage: "url('https://example.com/background.jpg')", backgroundSize: "cover", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ height: '100vh',  backgroundSize: "cover", display: "flex", justifyContent: "center", alignItems: "center"}}>
             <Box display={"flex"} flexDirection={"column"} alignItems="center" justifyContent="center">
                 <Box height={'20vh'} display={"flex"} flexDirection={"column"} justifyContent={"center"} alignItems={"center"} mb={4}>
                     <AccountCircle sx={{ fontSize: "90px" }} />
                     <Typography variant="h4" fontStyle={"italic"}> Welcome Back!</Typography>
                 </Box>
-                <Paper sx={{ width: '800px', borderRadius: '10px', padding: '20px' }}>
+                <Paper  sx={{marginBottom:'350px', width: '800px', borderRadius: '10px', padding: '20px' }}>
                     <Grid container spacing={4}>
                         <Grid item md={6} xs={12}>
                             <Box {...gridcomp}>

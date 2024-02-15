@@ -1,0 +1,22 @@
+.about-header {
+    padding: 20px;
+    text-align: center;
+}
+
+.about-image {
+    padding: 20px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-content {
+    padding: 20px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+}

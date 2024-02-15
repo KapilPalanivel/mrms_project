@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import Login from './Components/Login_Register/login';
 import Navbar from './Components/Navigation_Bar/navbar';
@@ -13,17 +13,35 @@ import Profile from './Components/Services/Profile';
 import Footer from './Components/Services/Footer';
 import Records from './Components/Services/Records';
 import AboutUs from './Components/Services/About';
+
 function App() {
-  const [isLoggedInd, setIsLoggedInd] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check login status on page load
+    const storedLoginStatus = localStorage.getItem('isLoggedIn');
+    if (storedLoginStatus === 'true') {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Navigate to home page after logging in
+    if (isLoggedIn) {
+      navigate('/home');
+    }
+  }, [isLoggedIn, navigate]);
 
   const handleLogin = () => {
-    setIsLoggedInd(true);
+    setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', true);
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <div className="App" style={{ backgroundImage: `url(${kmchBackground})`, flex: 1 }}>
-        <Navbar isLoggedInd={isLoggedInd} onLogin={handleLogin}/>
+    <div className="App">
+      <Navbar isLoggedInd={isLoggedIn} onLogin={handleLogin} />
+      <div className="content">
         <Routes>
           <Route path="/" element={<Login onLogin={handleLogin} />} />
           <Route path="/home" element={<HomePage />} />
@@ -36,7 +54,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
         </Routes>
       </div>
-      <Footer className="footer"></Footer>
+      {isLoggedIn && <div className="footer"><Footer isAuthenticated={isLoggedIn} /></div>}
     </div>
   );
 }

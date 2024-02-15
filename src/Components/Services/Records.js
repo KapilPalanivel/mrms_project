@@ -1,6 +1,9 @@
 import React from 'react';
 import { Container, Grid, Paper, Typography, Button } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
+
+import PageWrapper from '../../PageWrapper';
+
 const Records = () => {
   const navigate = useNavigate();
 
@@ -13,7 +16,7 @@ const Records = () => {
   };
 
   return (
-    <div className='homediv'>
+    <div className='homediv' style={{marginTop:'60px'}}>
       <Container maxWidth="md" style={{ marginTop: '20px', verticalAlign: '50vh' }}>
         <Grid container spacing={3} justifyContent="center" alignItems="center">
           <Grid item xs={12}>

@@ -1,27 +1,22 @@
-.App {
-  text-align: center;
-  
-}
-.App {
-  background-image: url('./kmch.jpg');
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 150vh;
-}
-.footer{
-  margin-top: 1000vh;
-}
- body {
+body {
   margin: 0;
   padding: 0;
-  background-image: url('./kmch.jpg'); 
-   /* Adjust the path based on your project structure  */
-  background-size: cover;
-  background-repeat:no-repeat;
+  background-image: url('./kmch.jpg');
+  background-size: cover; /* Ensures the background image covers the entire viewport */
+  background-repeat: no-repeat;
   height: 100vh;
   font-family: 'Arial', sans-serif;
-} 
+}
+
+/* Remove background properties from .App */
+.App {
+  text-align: center;
+}
+
+.footer {
+  margin-top: 1000vh;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

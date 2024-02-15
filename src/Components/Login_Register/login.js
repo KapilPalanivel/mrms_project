@@ -56,7 +56,7 @@ const Login = () => {
           {exist ? (
             null
           ) : (
-            <Paper elevation={3} style={{ padding: 4, height: '60vh', width: '40vh', margin: '20px auto' }}>
+            <Paper elevation={3} style={{marginBottom:'360px', padding: 4, height: '60vh', width: '40vh'}}>
               <Grid align="center">
                 <Avatar style={{ backgroundColor: '#0c7384', width: { xs: '50px', sm: '100px' }, height: { xs: '50px', sm: '100px' } }}>!</Avatar>
                 <Typography variant="h4" style={{ marginTop: '20px' }}>

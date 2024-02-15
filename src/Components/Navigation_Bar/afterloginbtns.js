@@ -1,37 +1,44 @@
-import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router';
-export default function Afterloginbtns() 
-{
-  const navigate=useNavigate();
-    const theme = createTheme({
-        typography: {
-          button: {
-            fontFamily: 'Goudy Old Style',
-            fontSize: 18,
-          },
-        },
-      });
-      const handleAppointment = () =>{
-        navigate('/appointment')
-      } 
-      const handleProfile = () =>{
-        navigate('/profile')
-      } 
-      const handleRecords= () =>{
-        navigate('/records');
-      }
-      const  handleAbout= () =>{
-        navigate('/about');
-      }
-    return(
-        <ThemeProvider theme={theme}>
-            <div className='afterloginbtn'>
-                <Button color="inherit" onClick={handleAbout}>About Us</Button>
-                <Button color="inherit" onClick={handleAppointment}>Appointments</Button>
-                <Button color="inherit" onClick={handleRecords}>Records</Button>
-                <Button color="inherit" onClick={handleProfile}>Profile</Button>
-            </div>
-        </ThemeProvider>
-    );
+import { Link } from 'react-router-dom';
+import './Afterloginbtns.css'; // assuming you have a CSS file for custom styling
+
+export default function Afterloginbtns() {
+
+  const theme = createTheme({
+    typography: {
+      button: {
+        fontFamily: 'Goudy Old Style',
+        fontSize: 18,
+      },
+    },
+  });
+  return (
+    <ThemeProvider theme={theme}>
+      <div className='afterloginbtn'>
+        <Link className='link' to='/about' onMouseOver={(e) => {
+          e.currentTarget.style.setProperty('--before-width', '50%');
+        }} onMouseOut={(e) => {
+          e.currentTarget.style.setProperty('--before-width', '0');
+        }}>About Us</Link>
+        
+        <Link className='link' to='/appointment' onMouseOver={(e) => {
+          e.currentTarget.style.setProperty('--before-width', '50%');
+        }} onMouseOut={(e) => {
+          e.currentTarget.style.setProperty('--before-width', '0');
+        }}>Appointments</Link>
+        
+        <Link className='link' to='/records' onMouseOver={(e) => {
+          e.currentTarget.style.setProperty('--before-width', '50%');
+        }} onMouseOut={(e) => {
+          e.currentTarget.style.setProperty('--before-width', '0');
+        }}>Records</Link>
+        
+        <Link className='link' to='/profile' onMouseOver={(e) => {
+          e.currentTarget.style.setProperty('--before-width', '50%');
+        }} onMouseOut={(e) => {
+          e.currentTarget.style.setProperty('--before-width', '0');
+        }}>Profile</Link>
+      </div>
+    </ThemeProvider>
+  );
 }
