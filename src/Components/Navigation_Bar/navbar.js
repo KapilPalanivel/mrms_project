@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -26,10 +25,7 @@ const Navbar = () => {
             <Link style={{color: 'white',fontFamily:'cursive'}}>Medical Records Management System</Link> 
           </Typography>
           {isAuthenticated ? (
-            <Afterloginbtns onLogout={handleLogout} />
-          ) : (
-           null
-          )}
+            <Afterloginbtns onLogout={handleLogout} />):(null)}
         </Toolbar>
       </AppBar>
       <Routes>
