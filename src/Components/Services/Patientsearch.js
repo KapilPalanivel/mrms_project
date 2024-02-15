@@ -34,7 +34,7 @@ const PatientSearch = () => {
   };
   const handleAddRecord = () => {
     navigate('/patientform');
-  }; 
+  };
   
   return (
     <Container maxWidth="sm" style={{ marginTop: '20px',height:'100vh' }}>
