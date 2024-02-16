@@ -17,7 +17,7 @@ const Login = () => {
   const [error, setError] = useState(false);
   const [exist, setExist] = useState(false);
   const navigate = useNavigate();
-  const { isAuthenticated, login } = useAuth();  // Use the useAuth hook
+  const { login } = useAuth();  // Use the useAuth hook
 
   useEffect(() => {
     axios.get(url).then((response) => {
