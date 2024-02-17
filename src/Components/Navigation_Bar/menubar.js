@@ -18,7 +18,7 @@ export default function Menubar() {
         setAnchorEl(null);
     };
     const handlePatientSearch = () => {
-        navigate('/patientsearch');
+        navigate('/PatientSearch');
         setAnchorEl(null);
     };
     return(

@@ -1,41 +1,9 @@
-/* .homediv {
-  margin: 0;
-  padding: 0;
-  background-color: transparent; /* Set background color to transparent 
-  height: 100vh;
-  font-family: 'Arial', sans-serif;
-  position: fixed; /* Set the background as fixed 
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Ensure the background is behind other content 
-} */
-
 .homeimg {
-  background-image: url('./kmch.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.cardcomp {
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 12px;
-  flex-direction: row; /* Changed from 'column' to 'row' */
-}
-
-.grid2comp {
-  padding: 5px;
-  gap: 3px;
-  height: 35vh;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 .gridcomp {
@@ -44,6 +12,13 @@
   align-items: center;
   border-radius: 4px;
   background-color: #fff;
-  box-shadow: 12px;
-  flex-direction: column; /* Changed from 'column' to 'row' */
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 30px;
 }
+
+.gridcomp:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+                

@@ -1,5 +1,4 @@
-// Login.js
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Avatar, Button, Container, Grid, Paper, TextField, Typography } from '@mui/material';
 import axios from 'axios';
 import { Routes, Route, useNavigate } from 'react-router-dom';
@@ -26,6 +25,12 @@ const Login = () => {
   }, []);
 
   const HandleLogin = () => {
+    // Prevent default form submission
+    // e.preventDefault();
+
+    // Check if HandleLogin is being executed
+    console.log("HandleLogin is called");
+
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
       if (formData.usrname === item.username && formData.pass === item.password) {
@@ -56,7 +61,7 @@ const Login = () => {
           {exist ? (
             null
           ) : (
-            <Paper elevation={3} style={{marginBottom:'360px', padding: 4, height: '60vh', width: '40vh'}}>
+            <Paper elevation={3} style={{ padding: 4, height: '60vh', width: '40vh'}}>
               <Grid align="center">
                 <Avatar style={{ backgroundColor: '#0c7384', width: { xs: '50px', sm: '100px' }, height: { xs: '50px', sm: '100px' } }}>!</Avatar>
                 <Typography variant="h4" style={{ marginTop: '20px' }}>
@@ -97,7 +102,7 @@ const Login = () => {
                 <br />
                 {error ? <Typography color={'red'} variant='6'>*Invalid Username or Password</Typography> : null}
                 <br />
-                <Button type="submit" variant="contained" onClick={HandleLogin}>
+                <Button type="button" variant="contained" onClick={HandleLogin}>
                   Login
                 </Button>
               </Grid>

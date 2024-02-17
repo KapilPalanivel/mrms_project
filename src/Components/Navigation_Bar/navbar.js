@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -11,14 +11,31 @@ import Login from '../Login_Register/login';
 
 const Navbar = ({ isLoggedInd }) => {
   const { isAuthenticated, login, logout } = useAuth(); // Use useAuth here
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleLogout = () => {
     logout();
   };
 
   return (
-    <div style={{height:'200px'}}>
-      <AppBar position="static" style={{ backgroundColor: '#164778' }}>
+    <div style={{ height: '200px' }}>
+      <AppBar position={isScrolled ? "fixed" : "static"} style={{ backgroundColor: '#164778' }}>
         <Toolbar style={{ justifyContent: 'space-between' }}>
           {isAuthenticated ? <Menubar /> : null}
           <Typography fontFamily={'Goudy Old Style'} className="navbar_heading" variant="h6" color="inherit" style={{ margin: '20px', textAlign: 'center' }}>

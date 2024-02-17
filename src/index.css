@@ -1,3 +1,5 @@
+/* index.css */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +7,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./kmch.jpg'); /* Updated path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh; /* Set to fill the entire viewport height */
+  overflow: auto; /* Enable scrolling if content exceeds viewport height */
 }
 
 code {
