@@ -1,0 +1,23 @@
+
+  .commonback {
+    background-image: url('./kmch.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed; /* Set background image as fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .navbar {
+    position: fixed;                           
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    background-color: #ffffff; 
+    z-index: 1000;
+    transition: top 0.3s;
+  }

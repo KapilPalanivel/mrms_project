@@ -3,12 +3,12 @@
     {
       "id": 1,
       "name": "Kalaiyarasan",
-      "username": "Kalai1220",
+      "username": "Kalai/",
       "number": "6380279113",
       "email": "kalaiyarasan1220@gmail.com",
       "password": "2005",
       "dept": "oncology",
-      "dob": "12.05.2005",
+      "dob": "12.05.2004",
       "sex": "Male"
     },
     {
@@ -74,6 +74,36 @@
       "dept": "",
       "dob": "",
       "id": 7
+    },
+    {
+      "username": "",
+      "name": "",
+      "number": "",
+      "email": "",
+      "password": "",
+      "dept": "",
+      "dob": "",
+      "id": 8
+    },
+    {
+      "username": "",
+      "name": "",
+      "number": "",
+      "email": "",
+      "password": "",
+      "dept": "",
+      "dob": "",
+      "id": 9
+    },
+    {
+      "username": "",
+      "name": "",
+      "number": "",
+      "email": "",
+      "password": "",
+      "dept": "",
+      "dob": "",
+      "id": 10
     }
   ],
   "employee": [
