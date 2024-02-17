@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Typography, Paper, List, ListItem, ListItemText, Button, TextField } from '@mui/material';
 
-import './Appointment.css';
+// import './Appointment.css';
 
 const Appointments = () => {
 
@@ -25,7 +25,7 @@ const Appointments = () => {
   };
 
   return (
-    <div className='commonback' style={{paddingTop:'30px', height: '100vh' }}>
+    <div className='commonback' style={{ paddingTop: '30px', height: '100vh' }}>
       <Typography variant="h4" sx={{ marginTop: '100px' }}>
         {todayFormatted}
       </Typography>

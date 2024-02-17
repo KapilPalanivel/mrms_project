@@ -10,8 +10,8 @@ body {
   background-image: url('./kmch.jpg'); /* Updated path */
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh; /* Set to fill the entire viewport height */
-  overflow: auto; /* Enable scrolling if content exceeds viewport height */
+   height: 125vh;
+  overflow: auto; 
 }
 
 code {

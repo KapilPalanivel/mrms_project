@@ -12,6 +12,7 @@ import Profile from './Components/Services/Profile';
 import Footer from './Components/Services/Footer';
 import Records from './Components/Services/Records';
 import AboutUs from './Components/Services/About';
+import DepartmentsPage from './Components/Services/Departments';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -38,6 +39,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login onLogin={handleLogin} />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/department" element={<DepartmentsPage />} />
           <Route path="/patientlist" element={<PatientList />} />
           <Route path="/patientform" element={<PatientForm />} />
           <Route path="/PatientSearch" element={<PatientSearch />} />

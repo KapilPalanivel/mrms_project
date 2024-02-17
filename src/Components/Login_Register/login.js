@@ -4,8 +4,7 @@ import axios from 'axios';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import HomePage from '../Home/home';
 import { useAuth } from '../../AuthContext';
-import './login.css';
-
+ 
 const Login = () => {
   const url = 'http://localhost:3002/employee';
   const [formData, setFormData] = useState({
@@ -25,12 +24,6 @@ const Login = () => {
   }, []);
 
   const HandleLogin = () => {
-    // Prevent default form submission
-    // e.preventDefault();
-
-    // Check if HandleLogin is being executed
-    console.log("HandleLogin is called");
-
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
       if (formData.usrname === item.username && formData.pass === item.password) {
@@ -56,59 +49,53 @@ const Login = () => {
 
   return (
     <div className='loginbody'>
-      <Container maxWidth="sm">
-        <Grid container justifyContent="center" alignItems="center" style={{ height: '100vh' }}>
-          {exist ? (
-            null
-          ) : (
-            <Paper elevation={3} style={{ padding: 4, height: '60vh', width: '40vh'}}>
-              <Grid align="center">
-                <Avatar style={{ backgroundColor: '#0c7384', width: { xs: '50px', sm: '100px' }, height: { xs: '50px', sm: '100px' } }}>!</Avatar>
-                <Typography variant="h4" style={{ marginTop: '20px' }}>
-                  Sign In
-                </Typography>
-                <Typography variant="body2" style={{ marginTop: '10px' }}>
-                  Enter your details to login to your account
-                </Typography>
-                <br />
-                <Typography variant="h5" style={{ textAlign: 'left', marginLeft: '30px' }}>
-                  Username
-                </Typography>
-                <TextField
-                  id="usrname"
-                  name="usrname"
-                  label="Enter your Username"
-                  variant="outlined"
-                  style={{ width: '250px', marginTop: 2 }}
-                  onChange={handleChange}
-                  value={formData.usrname}
-                  required
-                />
-                <br />
-                <Typography variant="h5" style={{ textAlign: 'left', marginLeft: '30px' }}>
-                  Password
-                </Typography>
-                <TextField
-                  id="pass"
-                  name="pass"
-                  label="Enter your Password"
-                  type="password"
-                  variant="outlined"
-                  style={{ width: '250px', marginTop: 2 }}
-                  onChange={handleChange}
-                  value={formData.pass}
-                  required
-                />
-                <br />
-                {error ? <Typography color={'red'} variant='6'>*Invalid Username or Password</Typography> : null}
-                <br />
-                <Button type="button" variant="contained" onClick={HandleLogin}>
-                  Login
-                </Button>
+      <Container maxWidth="sm" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Paper elevation={3} style={{ padding: '20px', width: '100%' }}>
+          <Grid container direction="column" alignItems="center" spacing={2}>
+            <Grid item>
+              <Avatar style={{ backgroundColor: '#0c7384', width: '100px', height: '100px' }}>!</Avatar>
+            </Grid>
+            <Grid item>
+              <Typography variant="h4">Sign In</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body2">Enter your details to login to your account</Typography>
+            </Grid>
+            <Grid item>
+              <TextField
+                id="usrname"
+                name="usrname"
+                label="Enter your Username"
+                variant="outlined"
+                style={{ width: '250px' }}
+                onChange={handleChange}
+                value={formData.usrname}
+                required
+              />
+            </Grid>
+            <Grid item>
+              <TextField
+                id="pass"
+                name="pass"
+                label="Enter your Password"
+                type="password"
+                variant="outlined"
+                style={{ width: '250px' }}
+                onChange={handleChange}
+                value={formData.pass}
+                required
+              />
+            </Grid>
+            {error && (
+              <Grid item>
+                <Typography color="error">*Invalid Username or Password</Typography>
               </Grid>
-            </Paper>
-          )}
-        </Grid>
+            )}
+            <Grid item>
+              <Button variant="contained" onClick={HandleLogin}>Login</Button>
+            </Grid>
+          </Grid>
+        </Paper>
       </Container>
       <Routes>
         <Route path="/home" element={<HomePage />} />
