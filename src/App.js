@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes, Link, useNavigate } from 'react-router-dom'; // Importing useNavigate
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import Login from './Components/Login_Register/login';
 import Navbar from './Components/Navigation_Bar/navbar';
@@ -16,7 +16,7 @@ import DepartmentsPage from './Components/Services/Departments';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); // Using useNavigate instead of BrowserRouter
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Check login status on page load
@@ -24,16 +24,21 @@ function App() {
     if (storedLoginStatus === 'true') {
       setIsLoggedIn(true);
     }
+    
+    if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+      window.location.href = 'http://localhost:3000';
+    }
   }, []);
+  
 
   const handleLogin = () => {
     setIsLoggedIn(true);
     localStorage.setItem('isLoggedIn', true);
-    navigate('/home'); // Navigate to home after logging in
+    navigate('/home');
   };
 
   return (
-    <div  className="App">
+    <div className="App">
       <Navbar isLoggedInd={isLoggedIn} onLogin={handleLogin} />
       <div className="content">
         <Routes>
@@ -49,7 +54,6 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
         </Routes>
       </div>
-      {isLoggedIn && <div className="footer"><Footer isAuthenticated={isLoggedIn} /></div>}
     </div>
   );
 }
