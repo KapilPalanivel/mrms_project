@@ -8,7 +8,7 @@
       "email": "kalaiyarasan1220@gmail.com",
       "password": "2005",
       "dept": "oncology",
-      "dob": "12.05.2004",
+      "dob": "12.05.2005",
       "sex": "Male"
     },
     {
@@ -64,56 +64,6 @@
       "dept": "",
       "dob": "",
       "id": 6
-    },
-    {
-      "username": "",
-      "name": "",
-      "number": "",
-      "email": "",
-      "password": "",
-      "dept": "",
-      "dob": "",
-      "id": 7
-    },
-    {
-      "username": "",
-      "name": "",
-      "number": "",
-      "email": "",
-      "password": "",
-      "dept": "",
-      "dob": "",
-      "id": 8
-    },
-    {
-      "username": "",
-      "name": "",
-      "number": "",
-      "email": "",
-      "password": "",
-      "dept": "",
-      "dob": "",
-      "id": 9
-    },
-    {
-      "username": "",
-      "name": "",
-      "number": "",
-      "email": "",
-      "password": "",
-      "dept": "",
-      "dob": "",
-      "id": 10
-    },
-    {
-      "username": "",
-      "name": "",
-      "number": "",
-      "email": "",
-      "password": "",
-      "dept": "",
-      "dob": "",
-      "id": 11
     }
   ],
   "employee": [
