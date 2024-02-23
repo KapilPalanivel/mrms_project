@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import HomePage from '../Home/home';
 import { useAuth } from '../../AuthContext';
+import Footer from '../Services/Footer';
  
 const Login = () => {
   const url = 'http://localhost:3002/employee';
